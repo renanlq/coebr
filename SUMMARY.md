@@ -2,11 +2,6 @@
 
 * [Salesforce](README.md)
 
-## The Company
-
-* [Escopo e objetivo](the-company/escopo-e-objetivo.md)
-* [Todos como um time](the-company/todos-como-um-time.md)
-
 ## Governança
 
 * [CoE - Centro de excelência](governanca/coe-centro-de-excelencia.md)
@@ -29,3 +24,8 @@
 * [Teste de interface](padroes-e-boas-praticas/teste-de-interface.md)
 * [Teste unitário](padroes-e-boas-praticas/teste-unitario.md)
 * [Versionamento de código](padroes-e-boas-praticas/versionamento-de-codigo.md)
+
+## The Company
+
+* [Escopo e objetivo](the-company/escopo-e-objetivo.md)
+* [Todos como um time](the-company/todos-como-um-time.md)
