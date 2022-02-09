@@ -31,8 +31,6 @@ Resumindo, siga estas etapas:
 Alguma dúvida sobre a criação de um _pull request_? Consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
 {% hint style="info" %}
-****
-
 **Não existe um dono do conhecimento:** como comunidade defendemos o compartilhamento do conhecimento para utilização das boas práticas por todos em nosso ecossistema Salesforce.
 {% endhint %}
 
