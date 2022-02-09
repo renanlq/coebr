@@ -42,5 +42,7 @@ Alguma dúvida sobre a criação de um _pull request_? Consulte a documentação
 
 ### Bio
 
+{% hint style="success" %}
 Inicialmente desenvolvedor (_desde 2007_), que foi se apaixonando pelo mundo cloud, práticas e cultura DevOps, e hoje focado no ciclo de vida de desenvolvimento para a solução SaaS de CRM, Salesforce.
+{% endhint %}
 
