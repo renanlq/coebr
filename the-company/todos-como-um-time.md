@@ -36,11 +36,12 @@ Alguma dúvida sobre a criação de um _pull request_? Consulte a documentação
 
 ## Renan Queiroz
 
-👋 renanlq@gmail.com — Remoto, Sem cidade definida :P
+👋 renanlq@gmail.com — Remoto, Sem cidade definida :P&#x20;
+
+&#x20;     My connections: [![renan-queiroz](https://camo.githubusercontent.com/28bbd2596707954793abeff9eb24d343c1c78b7bf184b90294b4b190c6097a65/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f6e706d2f73696d706c652d69636f6e7340332e302e312f69636f6e732f6c696e6b6564696e2e737667)  ](https://linkedin.com/in/renanlq)[![renanlq](https://github.com/alanJaouen/alanJaouen/raw/master/img/trailhead.svg)   ](https://trailblazer.me/id/renanlq)[![@renanlq](https://camo.githubusercontent.com/62e64e26e4fb4cf9f89649ea65f9b936094bc39d99770a9165911c925ddc2e20/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f6e706d2f73696d706c652d69636f6e7340332e302e312f69636f6e732f6d656469756d2e737667)](https://medium.com/@renanlq)
 
 ### Bio
 
 {% hint style="success" %}
 Inicialmente desenvolvedor (_desde 2007_), foi se apaixonando pelo mundo _cloud_, práticas e cultura DevOps, e hoje focado no ciclo de vida de desenvolvimento para a solução SaaS de CRM, Salesforce.
 {% endhint %}
-
