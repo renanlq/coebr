@@ -60,8 +60,10 @@ Ajuda no encapsulamento das tarefas de negócio, em outras palavras a lógica de
 
 **Quem consome a camada de serviço?**
 
-[![image](https://user-images.githubusercontent.com/15347353/152427835-e181eb50-a788-4421-a5b9-842458fd0e40.png)](https://user-images.githubusercontent.com/15347353/152427835-e181eb50-a788-4421-a5b9-842458fd0e40.png)\
+\
 _\[Imagem contida em módulo do Trailhead - Salesforce]_
+
+![\[Imagem contida em módulo do Trailhead - Salesforce\]](https://user-images.githubusercontent.com/15347353/152427835-e181eb50-a788-4421-a5b9-842458fd0e40.png)
 
 Trigger Apex não estão inclusas pois a lógica de negócio deve pertencer à camada de Domínio, que está alinhado com os Objetos e a manipulação desses em sua aplicação. A lógica de domínio e chamada diretamente e indiretamente pelas camadas de serviço e aplicação (UI e APIs).
 
@@ -75,10 +77,10 @@ De forma resumida a camada de domínio encapsula o comportamento e dados de um o
 
 A camada de domínio deve ser consumida por Triggers e camada de Serviço (Service Layer).
 
-[![image](https://user-images.githubusercontent.com/15347353/152427943-207830e0-2b73-4d59-a0c6-9c86b1707895.png)](https://user-images.githubusercontent.com/15347353/152427943-207830e0-2b73-4d59-a0c6-9c86b1707895.png)\
-_\[Imagem contida em módulo do Trailhead - Salesforce]_
+\
+Selector
 
-#### Selector
+![\[Imagem contida em módulo do Trailhead - Salesforce\]](https://user-images.githubusercontent.com/15347353/152427943-207830e0-2b73-4d59-a0c6-9c86b1707895.png)
 
 Analogia rápida, seria a nossa velha e conhecida DAO, mas com umas diferenças sobre responsabilidade, segurança, vindas do pattern Data Mapper, onde a camada de "mappers" é responsável por trafegar os dados entre objetos e "banco de dados", mantendo os independentes entre eles e até na própria camada.
 
@@ -90,8 +92,10 @@ Se for o caso de um SOQL requerer acesso a registros que não são de visibilida
 
 ### Modelo de arquitetura APEX pretendido
 
-[![image](https://user-images.githubusercontent.com/15347353/152428008-9f6f6f3e-47b0-4d9a-92d6-52d56b3c9f8c.png)](https://user-images.githubusercontent.com/15347353/152428008-9f6f6f3e-47b0-4d9a-92d6-52d56b3c9f8c.png)\
+\
 _\[Imagem contida em módulo do Trailhead - Salesforce]_
+
+![\[Imagem contida em módulo do Trailhead - Salesforce\]](https://user-images.githubusercontent.com/15347353/152428008-9f6f6f3e-47b0-4d9a-92d6-52d56b3c9f8c.png)
 
 ### Referências:
 
