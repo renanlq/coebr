@@ -1,0 +1,3 @@
+# Configuração (clicking)
+
+Em construção ...
