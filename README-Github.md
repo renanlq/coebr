@@ -18,4 +18,4 @@ Agradecemos às seguintes pessoas que contribuíram, de algumas forma, para este
 Quer fazer parte desse projeto? Clique [AQUI](/the-company/todos-como-um-time.md) e leia como contribuir.
 
 ## 📝 Licença
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes.
