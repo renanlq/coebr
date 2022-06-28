@@ -23,6 +23,7 @@
 * [Teste de integração](padroes-e-boas-praticas/teste-de-integracao.md)
 * [Teste de interface](padroes-e-boas-praticas/teste-de-interface.md)
 * [Teste unitário](padroes-e-boas-praticas/teste-unitario.md)
+* [Tratamento de erros Apex](padroes-e-boas-praticas/tratamento-erros.md)
 * [Versionamento de código](padroes-e-boas-praticas/versionamento-de-codigo.md)
 
 ## The Company
