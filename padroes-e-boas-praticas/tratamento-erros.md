@@ -6,21 +6,21 @@ Práticas para tratamento de erros, boas práticas de uso, transporte da mensage
 Utilização do block try-catch e classes de exceções padrões Salesforce
 ```
 try {
-	Case caso = CaseSelector.getById(CaseId); // Imagina o ID inexistente
+    Case caso = CaseSelector.getById(CaseId); // Imagina o ID inexistente
 
-	// Qualquer código após o bloco que gera a exceção não será executado
-	System.debug('Esse debug irá aparecer no log :P');
+    // Qualquer código após o bloco que gera a exceção não será executado
+    System.debug('Esse debug irá aparecer no log :P');
 }
 catch(QueryException queryException) {
-	System.debug('Erro em query' + queryException.getMessage());
-	throw queryException;
+    System.debug('Erro em query' + queryException.getMessage());
+    throw queryException;
 }
 catch(Exception exception) {
- 	System.debug('Erro genérico' + exception.getMessage()); 
- 	throw exception; 
+    System.debug('Erro genérico' + exception.getMessage()); 
+    throw exception; 
 }
 finally {
-	// Realizar algo ao fim
+    // Realizar algo ao fim
 }
 ```
 Ver mais na referência: Apex Methods System Limits.
@@ -30,61 +30,61 @@ Ver mais na referência: Apex Methods System Limits.
 Como trafegar sua msg de exceção, pelas camadas, até seu LWC ou Aura   
 ```
 public with sharing class BloqueioCartaoController {
-	@AuraEnabled
-	public static void blockCard(){
-		try {
-	  		CardService.blockCard();
-		}
-		catch (Exception e) {
-			AuraHandledException auraException = new AuraHandledException(e.getMessage()); // msg é obrigatória no construtor
-			auraException.setMessage(e.getMessage()); // mas se faz necessário passar no SET a msg novamente :S
-			throw auraException;
-		}
+    @AuraEnabled
+    public static void blockCard(){
+        try {
+            CardService.blockCard();
 	}
+	catch (Exception e) {
+	    AuraHandledException auraException = new AuraHandledException(e.getMessage()); // msg é obrigatória no construtor
+	    auraException.setMessage(e.getMessage()); // mas se faz necessário passar no SET a msg novamente :S
+            throw auraException;
+	}
+    }
 }
 ```
 
 ```
 public with sharing class CardService {
-	public static void blockCard() {
-	 	try {
-			// Alguma logica de consulta para validar possibilidade de bloqueio do cartao
-			if (UsuarioSemPermissao) {
-				throw new CardServiceException('Usuário não tem permissão para realizar o bloqueio do cartão');
-			}
+    public static void blockCard() {
+        try {
+            // Alguma logica de consulta para validar possibilidade de bloqueio do cartao
+            if (UsuarioSemPermissao) {
+	        throw new CardServiceException('Usuário não tem permissão para realizar o bloqueio do cartão');
+            }
 
-			//BancoDigitalCardAPIService.blockCard();
-		}
-		catch (Exception e) { 
- 			// Qualquer exceção não tratada
-			throw e; 
-		}
-	}
+            CardAPIService.blockCard();
+        }
+        catch (Exception e) { 
+            // Qualquer exceção não tratada
+            throw e; 
+        }
+    }
 
- 	private class CardServiceException extends Exception {} 
+    private class CardServiceException extends Exception {} 
 }
 ```
 
 ```
-public with sharing class BancoDigitalCardAPIService {
- 	public static void blockCard() {
-	 	try {
-			Map<String, Object> tokenReturn = ServiceUtils.getTokenMTLS();
-			// Monta o header com o token
-			Map<String, String> header = new Map<String, String>();
+public with sharing class CardAPIService {
+    public static void blockCard() {
+        try {
+            Map<String, Object> token = HttpService.getTokenMTLS();
+            // Monta o header com o token
+            Map<String, String> header = new Map<String, String>();
 
-			HttpResponse response = ServiceUtils.makeCalloutReturningResponse('URL', null, header, 'GET'); 	
+            HttpResponse response = HttpService.get('URL', header); 	
             if (response.getStatusCode() != 200) {
-				throw new BancoDigitalCardAPIServiceException('Erro na chamada de API. Erro ' + response.getStatusCode() + ' | ' + response.getBody());
-			}
-		}
-		catch (Exception e) { 
-			// Qualquer exceção não tratada
-			throw e;
-		}
-	}
+	        throw new CardAPIServiceException('Erro na chamada de API. Erro ' + response.getStatusCode() + ' | ' + response.getBody());
+            }
+        }
+        catch (Exception e) { 
+            // Qualquer exceção não tratada
+            throw e;
+        }
+    }
 
-	private class BancoDigitalCardAPIServiceException extends Exception {}
+    private class CardAPIServiceException extends Exception {}
 }
 ```
 
