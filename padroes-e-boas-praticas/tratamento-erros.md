@@ -1,5 +1,5 @@
 # Tratamento de erros Apex
-Práticas para tratamento de erros, boas práticas de uso, transporte da mensagem de exceção entre as macadas entre outras práticas.
+Práticas para tratamento de erros, boas práticas de uso, transporte da mensagem de exceção entre as camadas, de back-end. Aqui não definimos como a msg será apresentada no front-end, apenas unificando o meio de transporte até ele, sendo assim responsabilidade do front-end como apresentar as mesmas para o usuário.
 
 ### Exceções
 
