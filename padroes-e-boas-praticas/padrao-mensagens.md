@@ -30,15 +30,20 @@ Fila atual não é compatível para realização da ação, favor encaminhar ant
 Não foi possível realizar a/o [ ação ], contate um Administrador. Info: [ nome da classe (sem extensão) ].
 ```
 
+#### Log de erro
+```
+console.error('lwc:NomeClasse.metodo: erro');
+```
+
 ### Apex
 
 #### Debug
 ```
-System.debug('DEBUG: ' + INFORMACAO);
+System.debug('DEBUG: ' + informação);
 ```
 IMPORTANTE! Lembrando que não é uma boa prática deixar um MONTE de debug por ai, usar com parcimônia, e remover esses antes de enviar para QA e principalmente UAT e PRD 
 
 #### Log de erro
 ```
-System.debug('ERROR: NomeClase.Metodo [' + e.getLineNumber() + ']: ' + e.getMessage()) );
+System.debug('ERROR: NomeClase.Metodo [linha]: Mensagem de erro');
 ```
