@@ -1,9 +1,11 @@
 # Tratamento de erros Apex
+
 Práticas para tratamento de erros, boas práticas de uso, transporte da mensagem de exceção entre as camadas, de back-end. Aqui não definimos como a msg será apresentada no front-end, apenas unificando o meio de transporte até ele, sendo assim responsabilidade do front-end como apresentar as mesmas para o usuário.
 
-### Exceções
+## Exceções
 
 Utilização do block try-catch e classes de exceções padrões Salesforce
+
 ```
 try {
     Case caso = CaseSelector.getById(CaseId); // Imagina o ID inexistente
@@ -23,11 +25,13 @@ finally {
     // Realizar algo ao fim
 }
 ```
+
 Ver mais na referência: Apex Methods System Limits.
 
-### Disparo de exceções
+## Disparo de exceções
 
-Como trafegar sua msg de exceção, pelas camadas, até seu LWC ou Aura   
+Como trafegar sua msg de exceção, pelas camadas, até seu LWC ou Aura &#x20;
+
 ```
 public with sharing class BloqueioCartaoController {
     @AuraEnabled
@@ -88,6 +92,7 @@ public with sharing class CardAPIService {
 }
 ```
 
-### Referências
-1. [Apex Governor Limits](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm)  
-2. [Apex Methods System Limits](https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_methods_system_limits.htm)  
+## Referências
+
+1. [Apex Governor Limits](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex\_gov\_limits.htm)
+2. [Apex Methods System Limits](https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex\_methods\_system\_limits.htm)

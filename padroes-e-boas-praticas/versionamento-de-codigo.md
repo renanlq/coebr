@@ -1,43 +1,73 @@
 # Versionamento de código
 
-#### Requisitos
+## Requisitos
 
 Para cada nova feature ou projeto, definição da estratégia de _branch_ e definição de utilização de _feature branchs_ e ambientes _sandbox_ (dev).
 
-#### Sistema de versionamento
+## Sistema de versionamento
 
-Fortemente aconselhado a utilização do [git](https://git-scm.com), uma vez que é a ferramenta mais utilizada pela comunidade e com maior integração entre as ferramentas de gestão de repositórios.
+Fortemente aconselhado a utilização do [git](https://git-scm.com/), uma vez que é a ferramenta mais utilizada pela comunidade e com maior integração entre as ferramentas de gestão de repositórios.
 
-**Estratégia de branches**
+### **Estratégia de branches**
 
-Isso vai de lugar para lugar, podendo se trabalhar desde um modelo simples como [github flow](https://guides.github.com/introduction/flow/) aos mais complexos como [git flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), dado volume de ambientes e fluxos estipulados pela sua compania. Lembrando que para modelos mais complexos como _gitflow_ é interessante pensar na atualização dos ambientes quando possuirem diferentes fluxos até um ponto de conversão final, ex. pensar no "_rollover_" para ambientes anteriores ao mergeado, que não façam parte do seu fluxo.
+Isso varia de lugar para lugar, podendo se trabalhar desde um modelo simples como [github flow](https://guides.github.com/introduction/flow/) aos mais complexos como [git flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), dado volume de ambientes e fluxos estipulados pela sua compania. Lembrando que para modelos mais complexos como _gitflow_ é interessante pensar na atualização dos ambientes quando possuirem diferentes fluxos até um ponto de conversão final, ex. pensar no "_rollover_" para ambientes anteriores ao mergeado, que não façam parte do seu fluxo.
 
-**Feature Branch**
+#### **Feature branch**
 
-Por que usar uma branch em separado da sua de seu ambiente dev, por exemplo. Uma vez que utiliza uma _branch_ para separação da sua "_feature_", pode ser muito mais fácil organizar seus _commits_ e validar possíveis impactos nos _merges_ futuros.
+Por que usar uma branch em separado por entrega, ex. Issue no JIRA. Uma vez que utiliza uma _branch_ para separação da sua "_feature_", fica muito mais fácil organizar seus _commits_ e validar possíveis impactos nos _merges_ (_pull/merge requests_) futuros.
 
-Exemplos para fluxos simples:
+Exemplos nomenclatura:
 
 ```
 sandbox: devatendimento
-featrue branch: feature/cadastrouser
+featrue branch: feature/atd-180
 ```
 
-Exemplos para fluxo gitflow
+Flixo para promoção dessa feature:
 
 ```
 sandbox: devatendimento
 branchs por ambiente:
-- ft-atendimento/qa
-- ft-atendimento/uat
-- ft-atendimento/release
+- feature/atd-180
+- origin/qa
+- origin/uat
+- origin/master
 ```
 
-#### Ferramentas
+Dessa forma, para promoção, os _pull requests_ para os ambientes futuros (qa, uat ...) se da pelo _rebase_ da _branch_ feature/atd-180 e _pull requests_ nos ambientes subsequentes.
+
+#### Sandbox branch
+
+Nesse modelo temos uma única _branch_ para o ambiente de dev, ou seja, uma _branch_ recebendo _commits_ sobre todas atualizações ocorridas na _sandbox_. Esse modelo traz a facilidade de centralizar tudo em uma única branch, mas aumenta a complexidade da promoção das _features_ uma vez que os modelos das ferramentas de gestão de repos, usam o _merge_ entre _branches_. Ex. se temos 10 _commits_ em DEV, porém só queremos enviar 3 para QA, em ferramentas como Bitbucket, Gitlab entre outras, quando for criado o _pull request_, todos os 10 _commits_, que são difernetes entre as _branches_ serão listados no PR. Segue um modelinho que pode ajudar nessas tratativas.
+
+Exemplos nomenclatura:
+
+```
+sandbox: devatendimento
+featrue branch: feature/devatendimento
+```
+
+Flixo para promoção dessa feature:
+
+```
+sandbox: devatendimento
+branchs por ambiente:
+- feature/devatendimento
+- feature/devatendimento-qa
+- origin/qa
+- feature/devatendimento-uat
+- origin/uat
+- feature/devatendimento-release
+- origin/master
+```
+
+Dessa forma, pode se isolar os _commits_ via _cherry-pick_ e assim, sua feature/devatendimento-qa, é atualizada conforme _branch_ de QA, e isolamos os 3 _commits_ pretendidos para o PR, no inicio do exemplo. Esses passos são repetidos até o fim da promoção do pacote.
+
+## Ferramentas
 
 As ferramentas utilizadas estão listadas aqui: [Ferramentas](https://github.com/renanlq/salesforce/blob/master/salesforce/padroes/ferramentas).
 
-#### Padrão de mensagem
+## Padrão de mensagem
 
 Indico utilizar a lingua padrão do local de trabalho, sendo assim Português-BR, para Brasil, e qualquer outro lugar fora (seja remoto) Inglês-US. Uma boa prática é pensar nas ferramentas e automações existentes entre as soluções de ALM e Gestão de Repositório, pois dessa forma podem ser aproveitados os _hooks_ de integração entre elas.
 
@@ -45,24 +75,24 @@ Um exemplo é usar o Jira + GitLab, dessa forma seria interessante utilizar o se
 
 * CÓDIGO \[Gatilho] Mensagem.
   * Código: Número em UPPERCASE, separados por "-", ex. "PROJETO-HISTORIA";
-  * Trigger: Para utilização de atualização o item dentro do JIRA, ver: [Gitlab Integrations](https://docs.gitlab.com/ee/integration/jira/); e
+  * Trigger (se configurado): Para utilização de atualização o item dentro do JIRA, ex.: [Gitlab Integrations](https://docs.gitlab.com/ee/integration/jira/); e
   * Mensagem: Texto com pontuação, acentuação, que seja breve e conclusivo.
 
 Exemplos:
 
 ```
-0001-01 Criação metadados
-0001-01 Adicação campos em objeto case
-0001-01 Fixes Correção classe case                             // gatilho para conclusão de "bug" no Jira
-0001-01 Resolves Conclusão histório de cadastro de atendimento // gatilho atualizar "história", concluindo a mesma
+ATD-001 Criação metadados
+ATD-001 Adicação campos em objeto case
+ATD-001 Fixes Correção classe case                             // gatilho para conclusão de "bug" no Jira
+ATD-001 Resolves Conclusão histório de cadastro de atendimento // gatilho atualizar "história", concluindo a mesma
 
-0002 Feature de lista de usuários
-0001 Closes Fechamento do projeto                              // gatilho conclusão do "projeto"
+COE-002 Feature de lista de usuários
+COE-001 Closes Fechamento do projeto                              // gatilho conclusão do "projeto"
 ```
 
 **IMPORTANTE!** Informações sobre a sintax para mensagens de commit para automação com JIRA, devem segir modelo prédefinido pelas respectivas soluçeos de repositório, seja GitLab, Bitbucket e afins.
 
-#### Não versionáveis
+## Não versionáveis
 
 Lista abaixo são dos metadados com suas respectivoas considerações, relacionadas ao versionamento e promoção desses dentro das suas automações de CI/CD:
 

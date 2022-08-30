@@ -1,6 +1,6 @@
 # Arquitetura multicamada
 
-### Índice
+## Índice
 
 1. Apresentação
 2. Pré-requisitos
@@ -9,13 +9,13 @@
 5. Modelo pretendido
 6. Referências
 
-### Apresentação
+## Apresentação
 
 Intuito desse documento é apresentar a proposta de arquitetura e suas camadas para desenvolvimento das customizações programáticas do Salesforce.
 
 Seja onde estiver trabalhando, sempre é necessário estipularmos padrões e patterns, dessa forma para inicio de conversa o básico que precisamos saber sobre as camadas e suas respectivas responsabilidades serão descritas aqui. Pense na Service Layer como a porta de entrada da sua aplicação, como um exemplo, pense em utilizar ela como o consumo de uma API.
 
-### Pré-requisitos
+## Pré-requisitos
 
 Ter passado pelos seguintes módulos do Trailhead:
 
@@ -26,39 +26,39 @@ Ter passado pelos seguintes módulos do Trailhead:
 4. Domain e Selector.\
    Fora as classes de responsabilidades de tarefas intrínsecas à solução Salesforce: Batch, Controller, Trigger e patterns, ex.: Factory.
 
-### SOC - Separation of Concerns
+## SOC - Separation of Concerns
 
 Separação das responsabilidades, é entender que "o melhor código é aquele feito fora do teclado", e que todo software é feito de três camadas principais: Armazenamento, lógica e apresentação.
 
 Dessa forma é interessante entender o que cada solução dentro do Salesforce tem como responsabilidade e que camada represeta:
 
-#### Presentation
+### Presentation
 
 1. Declarative: Layouts, Flow, Record Types, Formulas, Reports, Dashboards
 2. Coding: Apex Controllers, VisualForce, Lightning Components
 
-#### Business Logic Layer
+### Business Logic Layer
 
 1. Declarative: Formula, Flow, Validation, Workflow (DEPRECATED), Process Builder (DEPRECATED), Sharing Rules
 2. Coding: Apex Services, Apex Custom Actions
 
-#### Data Access Layer
+### Data Access Layer
 
 1. Declarative: Data Loaders
 2. Coding: SOQL, SOSL, Salesforce APIs
 
-#### Database Layer
+### Database Layer
 
 1. Declarative: Custom Objects, Fields, Relationships, RollUps
 2. Coding: Apex Triggers
 
-### De onde elas vêm, e quais suas responsabilidades?
+## De onde elas vêm, e quais suas responsabilidades?
 
-#### Service
+### Service
 
 Ajuda no encapsulamento das tarefas de negócio, em outras palavras a lógica de processamentos relacionados ao 'tarefas' de negócio, cálculos e processamentos. Sua implementação deve levar em consideração que essa pode ser utilizadas em diferentes contexto, ex. Web, Mobile e API.&#x20;
 
-**Quem consome a camada de serviço?**
+#### **Quem consome a camada de serviço?**
 
 \
 _\[Imagem contida em módulo do Trailhead - Salesforce]_
@@ -67,7 +67,7 @@ _\[Imagem contida em módulo do Trailhead - Salesforce]_
 
 Trigger Apex não estão inclusas pois a lógica de negócio deve pertencer à camada de Domínio, que está alinhado com os Objetos e a manipulação desses em sua aplicação. A lógica de domínio e chamada diretamente e indiretamente pelas camadas de serviço e aplicação (UI e APIs).
 
-#### Domain
+### Domain
 
 De forma resumida a camada de domínio encapsula o comportamento e dados de um objeto. Como descrito por Martin Fowler:
 
@@ -77,8 +77,7 @@ De forma resumida a camada de domínio encapsula o comportamento e dados de um o
 
 A camada de domínio deve ser consumida por Triggers e camada de Serviço (Service Layer).
 
-\
-Selector
+### Selector
 
 ![\[Imagem contida em módulo do Trailhead - Salesforce\]](https://user-images.githubusercontent.com/15347353/152427943-207830e0-2b73-4d59-a0c6-9c86b1707895.png)
 
@@ -90,14 +89,14 @@ Evite usar "with sharing" ou "without sharing" nas classes Selector Apex para ga
 
 Se for o caso de um SOQL requerer acesso a registros que não são de visibilidade do usuário, é aconselhado o uso de uma "inner class" privada com esse contexto "without sharing" aplicado.
 
-### Modelo de arquitetura APEX pretendido
+## Modelo de arquitetura APEX pretendido
 
 \
 _\[Imagem contida em módulo do Trailhead - Salesforce]_
 
 ![\[Imagem contida em módulo do Trailhead - Salesforce\]](https://user-images.githubusercontent.com/15347353/152428008-9f6f6f3e-47b0-4d9a-92d6-52d56b3c9f8c.png)
 
-### Referências:
+## Referências:
 
 1. [Apex Enterprise Patterns: Service Layer](https://trailhead.salesforce.com/en/content/learn/modules/apex\_patterns\_sl)
 2. [Apex Enterprise Patterns: Domain & Selector Layers](https://trailhead.salesforce.com/en/content/learn/modules/apex\_patterns\_ds)

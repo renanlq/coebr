@@ -7,15 +7,15 @@ coverY: 0
 
 # Salesforce
 
-### Escopo e objetivo
+## Escopo e objetivo
 
 Aqui iremos tratar de boas práticas e padrões que podem ser utilizados na plataforma para auxiliar e facilitar a vida no dia-a-dia com o desenvolvimento nessa solução _cloud_. Não apenas assunto a nível _bit byte_ mas também sobra as práticas de governança que podem ser adotadas e até mesmo como podem utilizar o “CoE” a seu favor. ;)
 
-### Padrões, boas práticas e governança <a href="#padroes-boas-praticas-e-governanca" id="padroes-boas-praticas-e-governanca"></a>
+## Padrões, boas práticas e governança <a href="#padroes-boas-praticas-e-governanca" id="padroes-boas-praticas-e-governanca"></a>
 
 Abordaremos muitas práticas relacionadas à configuração e customização da plataforma, sempre visando facilitar sua manutenção e entendimento para possíveis “_onboards_” de novos colaboradores. E é claro também sobre a governança dos ambientes e boas práticas sobre o ciclo de desenvolvimento de soluções para Salesforce.
 
-### **Qual escopo**
+## **Qual escopo**
 
 * Melhores práticas de desenvolvimento
 * Patterns de desenvolvimento
@@ -24,12 +24,12 @@ Abordaremos muitas práticas relacionadas à configuração e customização da 
 
 _`IMPORTANTE! Não somos uma documentação oficial da Salesforce, apenas estamos unificando práticas de mercado e conhecimentos do mundo de desenvolvimento com o intuito de ser um ponto inicial para novos projetos ou até mesmo uma referência para refactorings e manutenções de soluções já existentes.`_
 
-### Governança
+## Governança
 
 * [CoE (Center of Excellence)](governanca/coe-centro-de-excelencia.md)
 * [Papéis e responsabilidades](governanca/papeis-e-responsabilidades.md)
 
-### Padrões e boas práticas <a href="#padroes-e-boas-praticas" id="padroes-e-boas-praticas"></a>
+## Padrões e boas práticas <a href="#padroes-e-boas-praticas" id="padroes-e-boas-praticas"></a>
 
 * [Ambientes (sandbox)](padroes-e-boas-praticas/ambientes-sandbox.md)
 * [Análise estática de código](padroes-e-boas-praticas/analise-estatica-de-codigo.md)
@@ -47,6 +47,6 @@ _`IMPORTANTE! Não somos uma documentação oficial da Salesforce, apenas estamo
 * [Teste unitário](padroes-e-boas-praticas/teste-unitario.md)
 * [Versionamento de código](padroes-e-boas-praticas/versionamento-de-codigo.md)
 
-### Como participar
+## Como participar
 
 Para contribuir com essa fonte de conhecimento, favor utilizar os passos descritos aqui: [Contribuições](the-company/todos-como-um-time.md)

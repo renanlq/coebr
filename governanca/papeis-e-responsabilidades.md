@@ -1,10 +1,10 @@
 # Papéis e responsabilidades
 
-### Objetivo
+## Objetivo
 
 Definir e apresentar uma visão das responsabilidades dos atores dentro da governança.
 
-### Papéis
+## Papéis
 
 * **CoE**: Center of Excellence em nosso PT-BR, Centro de Excelência. Grupo ou equipe destinada a gestão da governança dentro da solução SaaS, Salesforce;
 * **Arquiteto**: Conselheiro a nível de arquitetura, seja estratégica ou técnica, atua diretamente no desenho de soluções dentro da plataforma e fora, no caso suas integrações;
@@ -14,7 +14,7 @@ Definir e apresentar uma visão das responsabilidades dos atores dentro da gover
 * **Desenvolvedor**: Pessoa desenvolvedores com skills de programação, conhecimento em versionamento de código e facilidade com CLI e soluções de desenvolvimento e integração; e
 * **Tester**: Pessoa qualificada com expertise em automações de testes, conhecimento em ferramentas de automações de teste são um grande diferencial.
 
-### Responsabilidades
+## Responsabilidades
 
 |       Papél       | Responsabilidade                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | :---------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
