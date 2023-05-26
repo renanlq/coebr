@@ -34,8 +34,10 @@ Como trafegar sua msg de exceção, pelas camadas, até seu LWC ou Aura &#x20;
 
 ```
 public with sharing class BloqueioCartaoController {
+
     @AuraEnabled
     public static void blockCard(){
+    
         try {
             CardService.blockCard();
 	}
@@ -50,19 +52,15 @@ public with sharing class BloqueioCartaoController {
 
 ```
 public with sharing class CardService {
-    public static void blockCard() {
-        try {
-            // Alguma logica de consulta para validar possibilidade de bloqueio do cartao
-            if (UsuarioSemPermissao) {
-	        throw new CardServiceException('Usuário não tem permissão para realizar o bloqueio do cartão');
-            }
 
-            CardAPIService.blockCard();
-        }
-        catch (Exception e) { 
-            // Qualquer exceção não tratada
-            throw e; 
-        }
+    public static void blockCard() {
+    
+	// Alguma logica de consulta para validar possibilidade de bloqueio do cartao
+	if (UsuarioSemPermissao) {
+	    throw new CardServiceException('Usuário não tem permissão para realizar o bloqueio do cartão');
+	}
+
+	CardAPIService.blockCard();
     }
 
     private class CardServiceException extends Exception {} 
@@ -71,20 +69,16 @@ public with sharing class CardService {
 
 ```
 public with sharing class CardAPIService {
-    public static void blockCard() {
-        try {
-            Map<String, Object> token = HttpService.getTokenMTLS();
-            // Monta o header com o token
-            Map<String, String> header = new Map<String, String>();
 
-            HttpResponse response = HttpService.get('URL', header); 	
-            if (response.getStatusCode() != 200) {
-	        throw new CardAPIServiceException('Erro na chamada de API. Erro ' + response.getStatusCode() + ' | ' + response.getBody());
-            }
-        }
-        catch (Exception e) { 
-            // Qualquer exceção não tratada
-            throw e;
+    public static void blockCard() {
+    
+        Map<String, Object> token = HttpService.getTokenMTLS();
+        // Monta o header com o token
+        Map<String, String> header = new Map<String, String>();
+
+        HttpResponse response = HttpService.get('URL', header); 	
+        if (response.getStatusCode() != 200) {
+	    throw new CardAPIServiceException('Erro na chamada de API. Erro ' + response.getStatusCode() + ' | ' + response.getBody());
         }
     }
 
