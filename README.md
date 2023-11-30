@@ -1,8 +1,8 @@
 ---
-description: Bem vindo ao repo PÚBLICO de Padrões e Boas práticas Salesforce
+[description: Bem vindo ao repo PÚBLICO de Padrões e Boas práticas Salesforce
 cover: >-
   https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwyfHxjb2RlfGVufDB8fHx8MTY0NDMwNjI4OQ&ixlib=rb-1.2.1&q=85
-coverY: 0
+coverY: 0](https://renan-queiroz.gitbook.io/coebr/)
 ---
 
 # Salesforce
