@@ -5,7 +5,7 @@ cover: >-
 coverY: 0
 ---
 
-# [Salesforce](https://renan-queiroz.gitbook.io/coebr/)
+# Salesforce
 
 ## Escopo e objetivo
 
