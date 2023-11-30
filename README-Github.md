@@ -17,7 +17,7 @@ Agradecemos às seguintes pessoas que contribuíram, de algumas forma, para este
 ## 😄 Seja um dos contribuidores  
 Quer fazer parte desse projeto? Clique [AQUI](/the-company/todos-como-um-time.md) e leia como contribuir.
 
-## Link para o GitBook
+## GitBook.IO
 Link https://renan-queiroz.gitbook.io/coebr/
 
 ## 📝 Licença
