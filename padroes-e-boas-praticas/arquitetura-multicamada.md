@@ -96,6 +96,29 @@ _\[Imagem contida em módulo do Trailhead - Salesforce]_
 
 ![\[Imagem contida em módulo do Trailhead - Salesforce\]](https://user-images.githubusercontent.com/15347353/152428008-9f6f6f3e-47b0-4d9a-92d6-52d56b3c9f8c.png)
 
+## Vantagens e desvantagens
+Vamos direto ás desvantagens, de fato o aumento de camadas implica diretamente no tempo de desenvolvimento e um pequeno aumento de complexidade (inicial) na criação de um fluxo de CRUD ou consumo de API externa. E por final aumento na quantidade de customização na Org, dado que para cada nova classe e método temos novas classes e métodos de teste.
+
+Já por outro lado, as vantagens são: separando bem as responsabildades e centralizando a responsabilidade sobre um "dominio" (ex. Account, Case ... ) temos como benefícios a unididade de um processo, onde os possíveis impactos a um registro ou processo estarão nas devidas camadas exercendo suas responsabilidades. Logo, a rastreabilidade e manutenção e muito menor, do que quando temos os códigos todos separados por classes sem padronização.
+
+E sobre a manutenção do código, é muito importante saber o impacto em custo dos bug encontrados ainda em desenvolvimento vs produção, a Salesforce e outras empresas do mercado mesmo tem apresentações em que mostram que o custo para resolver um bug em prudução chega a ser 1000x maior que o custo da feature desenvolvida.
+
+## Classes, nomenclatura e responsabilidades
+| Tipo | Exemplo | Descrição |
+| ------------ | :--------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Objeto/Entidade	 | AccountDomain | Domain (extends fflib_SObjectDomain - se utilizarmos), em outras palavras, uma TriggerHandler, que controla o comportamento do objeto. Essa classe não deve possuir a notação @AuraEnabled. | 
+| Batch | NameBatch.cls |  |
+| Builder | NameViewModelBuilder.cls | Classe para separação das necessidades de conversão entre back-end (APEX) e front-end (Aura, LWC), quando ViewModel, e entre back-end e API HTTP (json) quando APIModel. Quando a complexidade da conversão for alta ou muito extensa. |
+| Controller | NameController.cls | Presentation layer MVC, faz a gestão da camada VIEW, roteador para a camada de Service e Selector. Essa classe não deve possuir a responsabilidade de negócio (Service) e integração. |
+| Invocable | NameInvocable.cls | Classes de invocação por meio de Flow. |
+| Mock | NameMock.cls	| Nome é baseado no "CONTEXTO" de APIs, não objeto. Classe para criação de "mocks" para validação de testes em cenários de APIs (callout). |
+| Service | NameService.cls | Service layer, consome APIs e serviços externos ao domínio dessa classe, também conhecida como BLL/BO. Deve ser a camada responsável por "commitar" as alterações de DML. |
+| Selector | NameSelector.cls | Camada de abstração com a "base de dados", também conhecida como Repository/DAO |
+| Test | NameServiceTest.cls	 | Classe para realização de testes "unitários", não apenas cobertura de código. |
+| Trigger | NameTrigger.cls	 |  |
+| TriggerHandler | ANameTriggerHandler.cls |  |
+| WebService | NameWebService.cls | Classe de call in para integrações REST de endpoints customizados. |
+
 ## Referências:
 
 1. [Apex Enterprise Patterns: Service Layer](https://trailhead.salesforce.com/en/content/learn/modules/apex\_patterns\_sl)
