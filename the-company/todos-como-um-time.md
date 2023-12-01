@@ -22,7 +22,7 @@ Caso queira contribuir adicionando conteúdo ou sugerindo modificações em noss
 
 Resumindo, siga estas etapas:
 
-1. Realize o _fork_ deste repositório: [https://github.com/renanlq/coebr](https://github.com/renanlq/coebr).
+1. Realize o _fork_ deste repositório: [https://github.com/renanlq/coebr](https://github.com/renanlq/coebr/blob/master/README-Github.md).
 2. Crie um _branch_: `git checkout -b <nome_branch>`.
 3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
 4. Envie para o _branch_ original: `git push origin <nome_do_projeto> / <local>`
