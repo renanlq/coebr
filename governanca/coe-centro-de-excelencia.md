@@ -16,6 +16,6 @@ Os princípios orientadores para o desenvolvimento eficaz dos aspectos técnicos
 ### Estratégia de Orgs
 O design, estrutura e fluxo das “Orgs” (sandbox e prd), as quais as features de Salesforce do cliente serão desenvolvidas, promovias e utilizados para testes/homologação e uso, conforme sua responsabilidade.
 
-## Referências
+### Referências
 1. [How To: Governance: Approaches to a Center of Excellence](https://help.salesforce.com/s/articleView?id=000392997&type=1)
 2. [Overcoming the Curse of the Center of Excellence Model (COE)](https://www.salesforce.com/blog/center-of-excellence-curse/)
