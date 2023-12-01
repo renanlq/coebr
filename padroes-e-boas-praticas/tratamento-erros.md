@@ -87,14 +87,10 @@ public with sharing class ExampleAPIService {
  
     public static void blockCard() {
  
-        //Map<String, Object> tokenReturn = ServiceUtils.getTokenMTLS();
-        // Monta o header com o token
-        Map<String, String> header = new Map<String, String>();
- 
-        HttpResponse response = ServiceUtils.makeCallout('URL', null, header, 'GET');
+        HttpResponse response = HttpClient.post(configmdt, 'url', headers, body);
  
         if (response.getStatusCode() != 200) {
-            System.debug('ERROR: BancoDigitalCardAPIService.blockCard: ' + response.getBody());
+            System.debug('ERROR: ExampleAPIServiceAPIService.blockCard: ' + response.getBody());
              
             // Se for necessário tratar os erros de HTTP, isso pode ser coletado no objeto de Response
             // IMPORTANTE! Exceção na API não estoura exception try-catch do APEX, são contextos diferentes.
