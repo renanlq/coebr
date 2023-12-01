@@ -19,6 +19,7 @@
 * [Design Patterns](padroes-e-boas-praticas/design-patterns.md)
 * [Ferramentas](padroes-e-boas-praticas/ferramentas.md)
 * [Integração (rest/soap)](padroes-e-boas-praticas/integracao-rest-soap.md)
+* [Lightning Design System](padroes-e-boas-praticas/lightning-design-system.md)
 * [Nomenclatura](padroes-e-boas-praticas/nomenclatura.md)
 * [Padrão de mensagens](padroes-e-boas-praticas/padrao-mensagens.md)
 * [Teste de integração](padroes-e-boas-praticas/teste-de-integracao.md)
