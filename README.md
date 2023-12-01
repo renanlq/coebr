@@ -31,7 +31,7 @@ _`IMPORTANTE! Não somos uma documentação oficial da Salesforce, apenas estamo
 
 ## Padrões e boas práticas <a href="#padroes-e-boas-praticas" id="padroes-e-boas-praticas"></a>
 
-* [Ambientes (sandbox)](padroes-e-boas-praticas/ambientes-sandbox.md)
+* [Ambientes Sandbox](padroes-e-boas-praticas/ambientes-sandbox.md)
 * [Análise estática de código](padroes-e-boas-praticas/analise-estatica-de-codigo.md)
 * [Arquitetura multicamada](padroes-e-boas-praticas/arquitetura-multicamada.md)
 * [CI/CD](padroes-e-boas-praticas/ci-cd.md)
@@ -41,10 +41,13 @@ _`IMPORTANTE! Não somos uma documentação oficial da Salesforce, apenas estamo
 * [Design Patterns](padroes-e-boas-praticas/design-patterns.md)
 * [Ferramentas](padroes-e-boas-praticas/ferramentas.md)
 * [Integração (rest/soap)](padroes-e-boas-praticas/integracao-rest-soap.md)
+* [Lightning Design System](padroes-e-boas-praticas/lightning-design-system.md)
 * [Nomenclatura](padroes-e-boas-praticas/nomenclatura.md)
+* [Padrão de mensagens](padroes-e-boas-praticas/padrao-mensagens.md)
 * [Teste de integração](padroes-e-boas-praticas/teste-de-integracao.md)
 * [Teste de interface](padroes-e-boas-praticas/teste-de-interface.md)
 * [Teste unitário](padroes-e-boas-praticas/teste-unitario.md)
+* [Tratamento de erros Apex](padroes-e-boas-praticas/tratamento-erros.md)
 * [Versionamento de código](padroes-e-boas-praticas/versionamento-de-codigo.md)
 
 ## Como participar
