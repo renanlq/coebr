@@ -1,4 +1,4 @@
-# CoE - Centro de excelência
+# CoE - Centro de Excelência
 
 ## Centre of Excellence (CoE)
 
