@@ -30,7 +30,7 @@ Ver mais na referência: Apex Methods System Limits.
 
 ## Disparo de exceções
 
-Como trafegar sua msg de exceção, pelas camadas, até seu LWC ou Aura &#x20;
+Como trafegar sua msg de exceção, pelas camadas, até seu LWC ou Aura
 
 ### Controller
 
@@ -43,20 +43,22 @@ public with sharing class ExampleController {
             ExampleService.blockCard();
         }
         catch (ExampleService.ExampleServiceException e) {
-            System.debug('ERROR: ' + e.getMessage() + '\n\n' + e.getStackTraceString());
+            System.debug(LoggingLevel.ERROR, 'Mensagem: ' + e.getMessage() + '\n\n' + e.getStackTraceString());
             throw new AuraHandledException(JSON.serialize(e));
         }
         catch (ExampleAPIService.ExampleAPIServiceException e) {
-            System.debug('ERROR: ' + e.getMessage() + '\n\n' + e.getStackTraceString());
+            System.debug(LoggingLevel.ERROR, 'Mensagem: ' + e.getMessage() + '\n\n' + e.getStackTraceString());
             throw new AuraHandledException(JSON.serialize(e));
         }
         catch (Exception e) {
-            System.debug('ERROR: ' + e.getMessage() + '\n\n' + e.getStackTraceString());
+            System.debug(LoggingLevel.ERROR, 'Mensagem: ' + e.getMessage() + '\n\n' + e.getStackTraceString());
             throw new AuraHandledException('Não foi possível realizar a ação, contate um Administrador.');
         }
     }
 }
 ```
+
+Ponto importante, o uso de `JSON.serialize(e)` é eficaz, mas vale lembrar que o front-end (LWC/Aura) deve desserializar e apresentar essas mensagens, que é responsabilidade do front-end, uma vez que não há detalhamento do contrato.
 
 ### Service
 
@@ -68,7 +70,7 @@ public with sharing class ExampleService {
         // Alguma logica de consulta para validar possibilidade de bloqueio do cartao
         Boolean UsuarioSemPermissao = false;
         if (UsuarioSemPermissao) {
-            System.debug('ERROR: CardService.blockCard: ' + UsuarioSemPermissao);
+            System.debug(LoggingLevel.ERROR, 'CardService.blockCard: ' + UsuarioSemPermissao);
             throw new ExampleServiceException(ExampleServiceException.Type.WARNING,
                                               'Usuário não tem permissão para realizar o bloqueio do cartão');
         }
@@ -90,7 +92,7 @@ public with sharing class ExampleAPIService {
         HttpResponse response = HttpClient.post(configmdt, 'url', headers, body);
  
         if (response.getStatusCode() != 200) {
-            System.debug('ERROR: ExampleAPIServiceAPIService.blockCard: ' + response.getBody());
+            System.debug(LoggingLevel.ERROR, 'ExampleAPIServiceAPIService.blockCard: ' + response.getBody());
              
             // Se for necessário tratar os erros de HTTP, isso pode ser coletado no objeto de Response
             // IMPORTANTE! Exceção na API não estoura exception try-catch do APEX, são contextos diferentes.

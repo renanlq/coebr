@@ -43,13 +43,13 @@ console.error('lwc/aura:NomeClasse.metodo: erro');
 ### Debug
 
 ```
-System.debug('DEBUG: ' + informação);
+System.debug(LoggingLevel.[TYPE], 'Mensagem');
 ```
 
-IMPORTANTE! Lembrando que não é uma boa prática deixar um MONTE de debug por ai, usar com parcimônia, e remover esses antes de enviar para QA e principalmente UAT e PRD
+IMPORTANTE! Lembrando que além de não ser uma boa prática deixar um MONTE de debug por ai, esse comportamento já é sinalizado como ruim dentro de agentes e sistemas de avaliação estática de código, lembre sempre de remover esses itens antes de enviar para os ambientes integrados da sua pipeline.
 
 ### Log de erro
 
 ```
-System.debug('ERROR: NomeClase.Metodo [linha]: Mensagem de erro');
+System.debug(LoggingLevel.ERROR, 'Erro ao processar ação: ' + e.getMessage + ' - ' + e.getStackTraceString());
 ```

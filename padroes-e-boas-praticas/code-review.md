@@ -8,6 +8,7 @@ _Code review_, é uma prática que pode salvar a sua vida, kkkkk em outras palav
 2. **Atividade**: Indicação para uma solicitação de horário para avaliação junto a pelo menos 2 devs, sendo 1 do comitê de aprovadores, não mais que 15 minutos para o _code review_. Serão avaliados no Code Review: Classes, Aura, LWC, Validation Rules, Flows, e demais metadados que tem potencial de impacto no nosso ambiente.
 
 ## Check-list - exemplo
+
 ```
 # Pull request checklist
 ## GIT
@@ -57,6 +58,15 @@ _Code review_, é uma prática que pode salvar a sua vida, kkkkk em outras palav
 ( ) Trigger aceita carga de dados? (Trigger, Alto)
 ( ) Web service (REST/SOAP) possui endpoint claro e versão, path em modelo RESTFUL? (Web Service, Alto)
 ```
+
+## Agentes de IA
+
+Assim como mencionado no uso para análise estática de código, para a revisão de Pull/Merge Request, jé é realidade a utilização de agentes de IA para atuar como revisores, não apenas sobre as práticas e padrões de código estático, mas também para uso na avaliação de itens de segurança e vulnerabilidades (OWASP).
+
+Agentes de mercado:
+
+* [Copilot Code Review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review)
+* [Gemini Code Assist](https://docs.cloud.google.com/gemini/docs/code-review/review-repo-code)
 
 ### Resultado avaliação
 
